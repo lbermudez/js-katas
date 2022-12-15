@@ -1,0 +1,5 @@
+describe('splitOddAndEven', () => {
+    it('logic', () => {
+        
+    })
+});
