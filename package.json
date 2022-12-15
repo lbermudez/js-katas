@@ -1,6 +1,7 @@
 {
     "name": "js-katas",
     "prettier": {
+        "printWidth": 80,
         "trailingComma": "es5",
         "tabWidth": 4,
         "semi": true,
@@ -11,6 +12,7 @@
     },
     "version": "1.0.0",
     "devDependencies": {
+        "@babel/preset-env": "^7.20.2",
         "eslint": "^8.29.0",
         "eslint-config-prettier": "^8.5.0",
         "eslint-plugin-prettier": "^4.2.1",
