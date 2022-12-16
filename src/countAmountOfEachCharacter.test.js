@@ -1,14 +1,14 @@
 import {
     countAmountOfEachCharacterByForOf,
     countAmountOfEachCharacterByRegex,
-    UNEXPECTED_TYPE,
 } from './countAmountOfEachCharacter';
+import { EXPECTED_STRING_TYPE } from './utils';
 
 describe('countAmountOfEachCharacter', () => {
     const cases = [
-        [UNEXPECTED_TYPE, undefined, UNEXPECTED_TYPE],
-        [UNEXPECTED_TYPE, null, UNEXPECTED_TYPE],
-        [UNEXPECTED_TYPE, 0, UNEXPECTED_TYPE],
+        [EXPECTED_STRING_TYPE, undefined, EXPECTED_STRING_TYPE],
+        [EXPECTED_STRING_TYPE, null, EXPECTED_STRING_TYPE],
+        [EXPECTED_STRING_TYPE, 0, EXPECTED_STRING_TYPE],
         ['empty primitive string', '', {}],
         ['empty object string', new String(''), {}],
         ['one character', 'a', { a: 1 }],
@@ -17,10 +17,10 @@ describe('countAmountOfEachCharacter', () => {
     ];
 
     describe('based regex', () => {
-        it.each(cases)('%s', (_, characters, expected) => {
+        it.each(cases)('%s', (_, inputString, expected) => {
             try {
                 expect(
-                    countAmountOfEachCharacterByRegex(characters)
+                    countAmountOfEachCharacterByRegex(inputString)
                 ).toStrictEqual(expected);
             } catch (error) {
                 expect(error.message).toBe(expected);
@@ -29,10 +29,10 @@ describe('countAmountOfEachCharacter', () => {
     });
 
     describe('based for of', () => {
-        it.each(cases)('%s', (_, characters, expected) => {
+        it.each(cases)('%s', (_, inputString, expected) => {
             try {
                 expect(
-                    countAmountOfEachCharacterByForOf(characters)
+                    countAmountOfEachCharacterByForOf(inputString)
                 ).toStrictEqual(expected);
             } catch (error) {
                 expect(error.message).toBe(expected);

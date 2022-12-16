@@ -1,12 +1,7 @@
-export const UNEXPECTED_TYPE = 'it must be a string';
-
-function validate(characters) {
-    if (typeof characters !== 'string' && !(characters instanceof String))
-        throw new Error(UNEXPECTED_TYPE);
-}
+import {validateString} from "./utils";
 
 export const countAmountOfEachCharacterByRegex = (characters) => {
-    validate(characters);
+    validateString(characters);
     const result = {};
     for (const char of characters) {
         if (!result[char])
@@ -16,7 +11,7 @@ export const countAmountOfEachCharacterByRegex = (characters) => {
 };
 
 export const countAmountOfEachCharacterByForOf = (characters) => {
-    validate(characters);
+    validateString(characters);
     const result = {};
     for (const char of characters) {
         if (result[char]) result[char]++;
