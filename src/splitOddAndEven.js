@@ -13,7 +13,7 @@ export const splitOddAndEven = (numbers) => {
 
     for (const number of numbers) {
         if (!Number.isInteger(number)) throw new Error(UNEXPECTED_TYPE);
-        number % 2 === 0 ? odd.push(number) : even.push(number);
+        number % 2 === 0 ? even.push(number) : odd.push(number);
     }
 
     return { odd, even };
