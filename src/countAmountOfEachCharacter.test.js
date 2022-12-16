@@ -2,7 +2,7 @@ import {
     countAmountOfEachCharacterByForOf,
     countAmountOfEachCharacterByRegex,
     UNEXPECTED_TYPE,
-} from './countAmountOfEachCharacterByRegex';
+} from './countAmountOfEachCharacter';
 
 describe('countAmountOfEachCharacter', () => {
     const cases = [
@@ -10,9 +10,10 @@ describe('countAmountOfEachCharacter', () => {
         [UNEXPECTED_TYPE, null, UNEXPECTED_TYPE],
         [UNEXPECTED_TYPE, 0, UNEXPECTED_TYPE],
         ['empty primitive string', '', {}],
-        ['empty object string', '', {}],
+        ['empty object string', new String(''), {}],
         ['one character', 'a', { a: 1 }],
         ['characters', 'aababbb', { a: 3, b: 4 }],
+        ['object string', new String('aababbb'), { a: 3, b: 4 }],
     ];
 
     describe('based regex', () => {
