@@ -1,4 +1,4 @@
-export const EXPECTED_STRING_TYPE = 'it must be a string';
+export const EXPECTED_STRING_TYPE = 'A string expected';
 
 export function validateString(inputString) {
     if (typeof inputString !== 'string' && !(inputString instanceof String))
