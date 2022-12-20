@@ -1,8 +1,6 @@
 export const calculateAmountOfPoints = (games) => {
     return games.reduce((acc, curr) => {
-        const coor = curr.split(':');
-        const x = coor[0];
-        const y = coor[1];
+        const [x, y] = curr.split(':');
         return acc + (x === y ? 1 : x < y ? 0 : 3);
     }, 0);
 };
